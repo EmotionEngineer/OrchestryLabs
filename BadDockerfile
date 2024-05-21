@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+# creating a new directory
+WORKDIR /app
+
+# installing golang
+RUN apt-get update
+RUN apt-get -y install golang
+
+# copying all files from the project directory
+COPY . .
+
+# building the package
+RUN go build -o main
+
+CMD ["./main"]
