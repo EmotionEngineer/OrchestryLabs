@@ -4,7 +4,7 @@
 
 Create a `docker-compose.yml` file with a minimum of three services.
 
-## Solution Description
+## Solution
 
 This lab work involved creating a `docker-compose.yml` file based on the `dockerspawner` repo from JupyterJub. The compose file orchestrates three services: an initialization service (`init-hub`), an Jupyter Hub (`hub`), and a database (`postgres`).
 
