@@ -43,6 +43,6 @@ The following steps were taken during the workflow:
 
 2. **What will happen if you scale the replicas of postgres-deployment to 0 and then back to 1?**
 
-   Scaling the replicas of a postgres-deployment in Kubernetes to 0 will terminate all the pods running for that deployment. This effectively shuts down the PostgreSQL database service, making it inaccessible to any applications or services that depend on it. Nextcloud will lose access to the PostgreSQL database, causing error 500.
+   Scaling the replicas of a postgres-deployment in Kubernetes to 0 will terminate all the pods running for that deployment. This effectively shuts down the PostgreSQL database service, making it inaccessible to any applications or services that depend on it. **Nextcloud will lose access to the PostgreSQL database, causing error 500.**
 
-   When you scale the replicas back to 1, Kubernetes will initiate a new pod for the postgres-deployment. This new pod will go through the usual initialization process, which includes starting up the PostgreSQL service and restoring its connection to persistent storage if it’s configured. This means that the database service will become accessible again once the pod is fully operational. But since the data is lost, NextCloud authorization will be broken.
+   When you scale the replicas back to 1, Kubernetes will initiate a new pod for the postgres-deployment. This new pod will go through the usual initialization process, which includes starting up the PostgreSQL service and restoring its connection to persistent storage if it’s configured. This means that the database service will become accessible again once the pod is fully operational. **But since the data is lost, NextCloud authorization will be broken.**
